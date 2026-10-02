@@ -39,7 +39,6 @@ export default async function EventPage({ params, searchParams }) {
 // generateMetadata stays the same, but change `og:url` to use `identifier`:
 
 export async function generateMetadata({ params }) {
-  'use cache'
   const { identifier } = await params
 
   const result = await fetchEventServer(identifier)
