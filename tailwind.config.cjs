@@ -3,12 +3,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-  "./app/**/*.{js,jsx,ts,tsx,mdx}",
-  "./components/**/*.{js,jsx,ts,tsx,mdx}",
-  "./pages/**/*.{js,jsx,ts,tsx}",   // if you add a pages/ dir later
-  "./hooks/**/*.{js,jsx,ts,tsx}",
-],
+ content: [
+    "./app/**/*.{js,jsx,ts,tsx,mdx}",
+    "./components/**/*.{js,jsx,ts,tsx,mdx}",
+    "./pages-legacy/**/*.{js,jsx,ts,tsx,mdx}", 
+    "./hooks/**/*.{js,jsx,ts,tsx}",
+    "./lib/**/*.{js,jsx,ts,tsx}", 
+  ],
   theme: {
     extend: {
       borderRadius: {

@@ -150,17 +150,27 @@ export const DashboardLayout = ({ children }) => {
     }
   }
 
-  useEffect(() => {
-    fetchUnreadCount()
-    const interval = setInterval(fetchUnreadCount, 30000)
-    return () => clearInterval(interval)
-  }, [])
+useEffect(() => {
+  // Only poll when we actually have an auth token
+  if (!authService.getToken()) return
+
+  fetchUnreadCount()
+  const interval = setInterval(fetchUnreadCount, 30000)
+  return () => clearInterval(interval)
+}, [])
+
+  // useEffect(() => {
+  //   if (showNotifications) {
+  //     fetchNotifications()
+  //   }
+  // }, [showNotifications])
+
 
   useEffect(() => {
-    if (showNotifications) {
-      fetchNotifications()
-    }
-  }, [showNotifications])
+  if (showNotifications && authService.getToken()) {
+    fetchNotifications()
+  }
+}, [showNotifications])
 
   useEffect(() => {
     const handleNotificationClickOutside = event => {
