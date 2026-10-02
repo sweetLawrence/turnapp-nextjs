@@ -73,12 +73,14 @@ const EventDetailsClient = ({ event: initialEvent, affiliateRef }) => {
     [event?.description]
   )
 
-  // ========== PAGE VIEW TRACKING (fire once on mount) ==========
-  useEffect(() => {
-    if (identifier) {
-      pageViewApi.recordView(identifier).catch(() => {})
-    }
-  }, [identifier])
+// ========== PAGE VIEW TRACKING (fire once on mount) ==========
+useEffect(() => {
+  // Prefer slug or uuid — backend route doesn't accept numeric IDs
+  const viewId = event?.slug || event?.uuid
+  if (viewId) {
+    pageViewApi.recordView(viewId).catch(() => {})
+  }
+}, [event?.slug, event?.uuid])
 
   // ========== AFFILIATE REFERRAL ==========
   useEffect(() => {
