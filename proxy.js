@@ -30,7 +30,7 @@ const RESERVED = new Set([
   'twitter-image',
 ])
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl
   const segments = pathname.split('/').filter(Boolean)
 
