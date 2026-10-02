@@ -17,8 +17,8 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter
-} from '@/components/ui/dialog";
-import { Textarea } from '@/components/ui/textarea";
+} from '@/components/ui/dialog';
+import { Textarea } from '@/components/ui/textarea';
 
 const AdminWithdrawalsPage = () => {
   const [withdrawals, setWithdrawals] = useState([]);

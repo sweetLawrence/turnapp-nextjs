@@ -17,7 +17,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 const OrganizerAffiliateEnrollmentsPage = () => {
   const router = useRouter();

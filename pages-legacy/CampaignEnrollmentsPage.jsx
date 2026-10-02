@@ -19,14 +19,14 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog";
+} from '@/components/ui/dialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator
-} from '@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
 const CampaignEnrollmentsPage = () => {
   const { id } = useParams();

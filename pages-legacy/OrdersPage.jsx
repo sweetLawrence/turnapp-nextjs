@@ -12,7 +12,7 @@ import { toast } from 'sonner';
 import {
   Dialog,
   DialogContent,
-} from '@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);

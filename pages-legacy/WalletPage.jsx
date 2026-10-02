@@ -18,13 +18,13 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle
-} from '@/components/ui/dialog";
+} from '@/components/ui/dialog';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu";
+} from '@/components/ui/dropdown-menu';
 
 const WalletPage = () => {
   const [wallet, setWallet] = useState(null);

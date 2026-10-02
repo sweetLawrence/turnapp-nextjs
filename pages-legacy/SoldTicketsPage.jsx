@@ -17,7 +17,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogFooter
-} from '@/components/ui/dialog";
+} from '@/components/ui/dialog';
 
 const SoldTicketsPage = () => {
   const [tickets, setTickets] = useState([]);
