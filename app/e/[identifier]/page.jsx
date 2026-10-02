@@ -34,8 +34,16 @@ export async function generateMetadata({ params }) {
   if (!result) return { title: 'Event not found - TurnApp' }
 
   const { event, canonicalSlug } = result
+  // const siteUrl =
+  //   process.env.NEXT_PUBLIC_SITE_URL || 'https://turnapp.events'
+
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://turnapp.events'
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000')
 
   const canonicalUrl = `${siteUrl}/${canonicalSlug}`
 
