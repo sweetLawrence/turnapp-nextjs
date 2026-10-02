@@ -53,7 +53,12 @@ export async function generateMetadata({ params }) {
     'Check out this amazing event on TurnApp!'
   ).trim()
 
-  const image = event.image || `${siteUrl}/og-image.jpg`
+  // const image = event.image || `${siteUrl}/og-image.jpg`
+
+  const image = event.image
+  ? `${siteUrl}/api/og-image?src=${encodeURIComponent(event.image)}`
+  : `${siteUrl}/og-image.jpg`
+  
 
   return {
     title: `${event.title} - TurnApp`,
